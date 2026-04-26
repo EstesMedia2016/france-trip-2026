@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joshua &amp; Michelle — 10 Year Anniversary · France 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bleu:    #002395;
+    --rouge:   #ED2939;
+    --blanc:   #FFFFFF;
+    --stone:   #f0ebe0;
+    --wheat:   #c8a84b;
+    --wheat-lt:#e2c97a;
+    --lavender:#7b6d8d;
+    --sage:    #4a6741;
+    --terra:   #c65d3b;
+    --ink:     #1c1a18;
+    --muted:   #7a736a;
+    --border:  #ddd5c6;
+    --shadow:  0 2px 22px rgba(28,26,24,0.09);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Jost',sans-serif;background:var(--stone);color:var(--ink);font-size:15px;line-height:1.65;}
+
+  /* TRICOLOR STRIPE */
+  .tricolor{display:flex;height:7px;}
+  .tricolor .bl{flex:1;background:var(--bleu);}
+  .tricolor .wh{flex:1;background:var(--blanc);border-top:1px solid #ddd;}
+  .tricolor .rg{flex:1;background:var(--rouge);}
+
+  /* HEADER */
+  .header{
+    background:linear-gradient(150deg,#1c1a18 0%,#2a2218 55%,#1c1a18 100%);
+    color:var(--blanc);padding:60px 48px 52px;
+    position:relative;overflow:hidden;
+  }
+  .header-accent{
+    position:absolute;left:0;top:0;bottom:0;width:5px;
+    background:linear-gradient(180deg,var(--bleu) 0%,var(--blanc) 50%,var(--rouge) 100%);
+  }
+  .header::before{
+    content:'';position:absolute;top:-90px;right:-90px;
+    width:400px;height:400px;border-radius:50%;
+    border:1px solid rgba(200,168,75,0.18);pointer-events:none;
+  }
+  .header::after{
+    content:'';position:absolute;bottom:-60px;left:32%;
+    width:280px;height:280px;border-radius:50%;
+    border:1px solid rgba(200,168,75,0.11);pointer-events:none;
+  }
+  .header-inner{max-width:860px;margin:0 auto;position:relative;z-index:2;}
+
+  .eyebrow{
+    font-size:10.5px;letter-spacing:4px;text-transform:uppercase;
+    color:rgba(226,201,122,0.7);margin-bottom:22px;font-weight:400;
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before,.eyebrow::after{content:'';flex:1;max-width:60px;height:1px;background:rgba(226,201,122,0.3);}
+
+  /* GOLD SPARKLE TITLE */
+  .title-wrap{position:relative;display:inline-block;margin-bottom:12px;}
+  .title-wrap h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(36px,6.5vw,62px);
+    font-weight:600;line-height:1.08;
+    background:linear-gradient(135deg,#c8a84b 0%,#f0d98a 30%,#e2c97a 50%,#f5e5a0 65%,#c8a84b 85%,#e8d070 100%);
+    -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    background-clip:text;
+    filter:drop-shadow(0 0 18px rgba(200,168,75,0.45));
+  }
+  .title-sub{
+    font-family:'Cormorant Garamond',serif;font-style:italic;
+    font-size:clamp(18px,3vw,28px);font-weight:300;
+    color:rgba(245,229,160,0.75);display:block;margin-top:4px;letter-spacing:1px;
+  }
+
+  /* SPARKLES */
+  .spark{position:absolute;pointer-events:none;}
+  .spark svg{animation:twinkle 2.4s ease-in-out infinite;}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(0.5) rotate(0deg);}50%{opacity:1;transform:scale(1) rotate(20deg);}}
+
+  .header-meta{margin-top:32px;display:flex;gap:28px;flex-wrap:wrap;}
+  .meta-item{display:flex;flex-direction:column;gap:3px;}
+  .meta-label{font-size:9.5px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(226,201,122,0.45);}
+  .meta-value{font-size:13.5px;color:rgba(255,255,255,0.85);font-weight:400;}
+
+  /* LAYOUT */
+  .container{max-width:860px;margin:0 auto;padding:0 24px;}
+
+  /* CALENDAR STRIP */
+  .cal-strip{
+    background:white;border:1px solid var(--border);border-radius:12px;
+    padding:20px 24px;margin:28px 0 0;box-shadow:var(--shadow);
+    display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+    border-left:4px solid var(--bleu);
+  }
+  .cal-strip-text{flex:1;min-width:200px;}
+  .cal-strip-text strong{display:block;font-size:14px;margin-bottom:3px;}
+  .cal-strip-text span{font-size:12px;color:var(--muted);}
+  .cal-btn-group{display:flex;gap:10px;flex-wrap:wrap;}
+  .cal-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:7px;font-size:13px;font-weight:500;cursor:pointer;text-decoration:none;border:none;font-family:'Jost',sans-serif;transition:opacity 0.15s,transform 0.1s;line-height:1;}
+  .cal-btn:hover{opacity:0.85;transform:translateY(-1px);}
+  .btn-ics{background:var(--sage);color:white;}
+  .btn-gcal{background:var(--bleu);color:white;}
+  .cal-sm{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:500;padding:4px 10px;border-radius:5px;cursor:pointer;text-decoration:none;border:none;font-family:'Jost',sans-serif;transition:opacity 0.15s;white-space:nowrap;}
+  .cal-sm:hover{opacity:0.8;}
+  .cal-sm.ics{background:#eaf2eb;color:var(--sage);}
+  .cal-sm.gcal{background:#e8edfc;color:var(--bleu);}
+  .ev-actions{display:flex;gap:7px;margin-top:9px;flex-wrap:wrap;}
+
+  /* ALERT */
+  .alert{background:#fffaed;border-left:3px solid var(--wheat);padding:13px 18px;margin:16px 0 0;border-radius:0 7px 7px 0;font-size:13px;}
+  .alert a{color:var(--bleu);text-decoration:none;border-bottom:1px solid rgba(0,35,149,0.25);}
+
+  /* SECTION */
+  .section{margin-top:52px;}
+  .section-header{
+    display:flex;align-items:center;gap:14px;margin-bottom:24px;padding-bottom:13px;
+    border-bottom:2px solid transparent;
+    background:linear-gradient(white,white) padding-box,
+               linear-gradient(90deg,var(--bleu),var(--rouge)) border-box;
+  }
+  .section-icon{font-size:17px;}
+  .section-title{
+    font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);
+  }
+  .section-sub{font-size:11px;color:var(--muted);letter-spacing:1.5px;text-transform:uppercase;margin-left:auto;}
+
+  /* DAY CARDS */
+  .day-card{background:white;border-radius:12px;border:1px solid var(--border);margin-bottom:14px;overflow:hidden;box-shadow:var(--shadow);}
+  .day-hdr{display:flex;align-items:stretch;border-bottom:1px solid var(--border);}
+  .day-num{
+    background:var(--bleu);color:white;padding:16px 18px;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:70px;gap:1px;
+  }
+  .day-num .mo{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(226,201,122,0.8);}
+  .day-num .dt{font-family:'Cormorant Garamond',serif;font-size:28px;line-height:1;font-weight:600;}
+  .day-num .dw{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,0.45);}
+  .day-info{padding:14px 18px;flex:1;}
+  .day-info h3{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;margin-bottom:2px;color:var(--ink);}
+  .day-info p{font-size:12px;color:var(--muted);}
+  .day-badge-wrap{padding:14px 18px;display:flex;align-items:center;}
+  .badge{font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;padding:4px 11px;border-radius:20px;font-weight:500;}
+  .bt{background:#e8edfc;color:var(--bleu);}
+  .bp{background:#f5ede8;color:#6b3a1f;}
+  .bd{background:#eaf2eb;color:var(--sage);}
+  .br{background:#fcecea;color:#a02020;}
+
+  /* TIMELINE */
+  .events{padding:6px 0 10px;}
+  .ev{display:flex;gap:16px;padding:11px 18px;position:relative;}
+  .ev:not(:last-child)::after{content:'';position:absolute;left:36px;top:42px;bottom:0;width:1px;background:var(--border);}
+  .ev-time{width:52px;flex-shrink:0;font-size:11.5px;font-weight:500;color:var(--muted);padding-top:3px;text-align:right;}
+  .ev-dot{width:10px;height:10px;border-radius:50%;border:2px solid var(--wheat);background:white;flex-shrink:0;margin-top:5px;z-index:1;position:relative;}
+  .ev-dot.f{background:var(--wheat);}
+  .ev-body{flex:1;}
+  .ev-body strong{font-size:13.5px;font-weight:500;display:block;margin-bottom:2px;}
+  .ev-body p{font-size:12.5px;color:var(--muted);line-height:1.5;}
+  .conf{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--bleu);margin-top:4px;font-weight:500;}
+  .conf a{color:var(--bleu);text-decoration:none;border-bottom:1px solid rgba(0,35,149,0.22);}
+  .note{background:var(--stone);border-radius:6px;padding:7px 11px;font-size:12px;color:var(--muted);margin-top:5px;line-height:1.5;}
+
+  /* BOOKING GRID */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+  @media(max-width:620px){.grid{grid-template-columns:1fr;}.day-badge-wrap{display:none;}}
+  .bcard{background:white;border:1px solid var(--border);border-radius:10px;padding:18px;box-shadow:var(--shadow);}
+  .bcard.warn{border-color:#f5c6bb;}
+  .bc-lbl{font-size:9.5px;letter-spacing:2px;text-transform:uppercase;color:var(--wheat);font-weight:500;margin-bottom:7px;}
+  .bc-lbl.danger{color:var(--rouge);}
+  .bc-ttl{font-family:'Cormorant Garamond',serif;font-size:17px;margin-bottom:10px;font-weight:600;}
+  .bcard dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:12.5px;}
+  .bcard dt{color:var(--muted);white-space:nowrap;}
+  .bcard dd{font-weight:500;}
+  .cl{display:inline-block;margin-top:10px;font-size:11.5px;color:var(--bleu);text-decoration:none;border-bottom:1px solid rgba(0,35,149,0.25);font-weight:500;}
+  .pending{color:var(--rouge);font-style:italic;font-size:12px;}
+
+  /* COST TABLE */
+  .ctable{width:100%;border-collapse:collapse;margin-top:18px;font-size:13px;}
+  .ctable th{text-align:left;padding:9px 13px;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);border-bottom:2px solid var(--border);font-weight:500;}
+  .ctable td{padding:10px 13px;border-bottom:1px solid var(--border);vertical-align:top;}
+  .ctable tr:last-child td{border-bottom:none;}
+  .ctable .tr td{font-weight:600;background:linear-gradient(90deg,rgba(0,35,149,0.04),rgba(237,41,57,0.03));font-size:13.5px;}
+
+  /* ACTION LIST */
+  .alist{list-style:none;margin-top:18px;}
+  .alist li{display:flex;gap:12px;padding:11px 15px;background:white;border:1px solid var(--border);border-radius:8px;margin-bottom:8px;font-size:13px;align-items:flex-start;}
+  .tag{font-size:9.5px;letter-spacing:1px;text-transform:uppercase;padding:3px 8px;border-radius:4px;white-space:nowrap;font-weight:500;margin-top:1px;}
+  .tag.urg{background:#fcecea;color:#a02020;}
+  .tag.def{background:#e8edfc;color:var(--bleu);}
+
+  /* FOOTER */
+  .footer{margin-top:56px;padding:36px 0;border-top:1px solid var(--border);text-align:center;}
+  .footer p{font-size:12px;color:var(--muted);line-height:1.9;}
+  .hearts{font-size:20px;display:block;margin-bottom:10px;letter-spacing:8px;}
+
+  @media print{.cal-strip,.ev-actions,.cal-btn-group{display:none!important;}.day-card{break-inside:avoid;}}
+</style>
+</head>
+<body>
+
+<div class="tricolor"><span class="bl"></span><span class="wh"></span><span class="rg"></span></div>
+
+<div class="header">
+  <div class="header-accent"></div>
+  <div class="header-inner">
+    <div class="eyebrow">10 Year Anniversary · June 2026</div>
+
+    <div class="title-wrap" id="titleWrap">
+      <h1>Joshua &amp; Michelle<br>Anniversary Trip</h1>
+      <span class="title-sub">Paris &amp; the Dordogne, France</span>
+    </div>
+
+    <div class="header-meta">
+      <div class="meta-item"><span class="meta-label">Travelers</span><span class="meta-value">8 people · 3 families</span></div>
+      <div class="meta-item"><span class="meta-label">Dates</span><span class="meta-value">June 9 – 24, 2026</span></div>
+      <div class="meta-item"><span class="meta-label">Families</span><span class="meta-value">Estes · Kourakin · Berardi</span></div>
+      <div class="meta-item"><span class="meta-label">Villa</span><span class="meta-value">Manoir 1731, Carlux</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <div class="cal-strip">
+    <div class="cal-strip-text">
+      <strong>📅 Add the full trip to your calendar</strong>
+      <span>Downloads all 10 events as a single .ics file — works with Apple Calendar, Google Calendar, Outlook, and any other app.</span>
+    </div>
+    <div class="cal-btn-group">
+      <button class="cal-btn btn-ics" onclick="downloadAllICS()">⬇ Download All Events (.ics)</button>
+      <a class="cal-btn btn-gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%8F%A1+Manoir+1731+%E2%80%94+Carlux,+Dordogne&dates=20260613/20260620&details=Manoir+1731,+Carlux.+Res.+%23M1771855227263.+All+8+travelers.+Entry+codes+arrive+~June+3+from+Oliver%27s+Travels.&location=Manoir+1731,+Carlux,+Dordogne,+France" target="_blank">+ Add Villa Week to Google</a>
+    </div>
+  </div>
+
+  <div class="alert">
+    <strong>⚠ Pending:</strong> Hotels.com Bordeaux Itinerary <strong>#72072026164793</strong> (Jun 20) — amount unknown, email image-only. Also: <strong>gmberardi@comcast.com bounced</strong> — use <strong>gmberardi@comcast.net</strong>.
+  </div>
+
+  <!-- ITINERARY -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🗓</span>
+      <span class="section-title">Day-by-Day Itinerary</span>
+      <span class="section-sub">All times local</span>
+    </div>
+
+    <!-- Jun 9 -->
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num"><span class="mo">Jun</span><span class="dt">9</span><span class="dw">Tue</span></div>
+        <div class="day-info"><h3>Berardis fly to Newark</h3><p>Atlanta → EWR domestic connection (NXB2X9)</p></div>
+        <div class="day-badge-wrap"><span class="badge bt">Travel</span></div>
+      </div>
+      <div class="events">
+        <div class="ev">
+          <div class="ev-time">7:37 PM</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>UA1152 departs ATL → arrives EWR 10:04 PM</strong>
+            <p>Garry &amp; Kathy Berardi · Seats 31A / 31B</p>
+            <div class="conf">Conf: <a href="https://mail.google.com/mail/u/0/#inbox/19d8e144cf23f713" target="_blank">NXB2X9 ↗</a> · Receipt: <a href="https://mail.google.com/mail/u/0/#inbox/19d8e15286282c56" target="_blank">eTicket ↗</a></div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('berardi-atl-ewr')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%E2%9C%88+Berardis:+ATL+%E2%86%92+EWR+(UA1152,+NXB2X9)&dates=20260609T233700Z/20260610T020400Z&details=United+Airlines+UA1152%0AConf:+NXB2X9%0AGarry+%26+Kathy+Berardi%0ASeats:+31A+/+31B&location=Atlanta+Hartsfield-Jackson+International+Airport+(ATL)" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jun 11 -->
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num"><span class="mo">Jun</span><span class="dt">11</span><span class="dw">Thu</span></div>
+        <div class="day-info"><h3>All families depart EWR</h3><p>EWR → CDG overnight transatlantic</p></div>
+        <div class="day-badge-wrap"><span class="badge bt">Travel</span></div>
+      </div>
+      <div class="events">
+        <div class="ev">
+          <div class="ev-time">Evening</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>Estes + Kourakins: United EWR → CDG (JD2ETX)</strong>
+            <p>Joshua, Michelle + 2 kids · Austin &amp; Mary Kourakin · 6 passengers</p>
+            <div class="conf">Conf: <a href="https://mail.google.com/mail/u/0/#inbox/19c9c841acd106c8" target="_blank">JD2ETX ↗</a> · Receipt: <a href="https://mail.google.com/mail/u/0/#inbox/19c9c84e2cb90083" target="_blank">eTicket ↗</a></div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('ewr-cdg-estes')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%E2%9C%88+EWR+%E2%86%92+Paris+CDG+%E2%80%94+Estes+%26+Kourakins+(JD2ETX)&dates=20260611/20260612&details=United+Airlines+EWR+%E2%86%92+Paris+CDG%0AConf:+JD2ETX%0AJoshua,+Michelle+%2B+kids,+Austin+%26+Mary+Kourakin%0A6+passengers&location=Newark+Liberty+International+(EWR)" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="ev-time">Evening</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>Berardis: United EWR → CDG (ORXMWZ)</strong>
+            <p>Garry &amp; Kathy Berardi · 2 passengers</p>
+            <div class="conf">Conf: <a href="https://mail.google.com/mail/u/0/#inbox/19cd580cdabf621f" target="_blank">ORXMWZ ↗</a> · Receipt: <a href="https://mail.google.com/mail/u/0/#inbox/19cd581d102bdb93" target="_blank">eTicket ↗</a></div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('ewr-cdg-berardi')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%E2%9C%88+EWR+%E2%86%92+Paris+CDG+%E2%80%94+Berardis+(ORXMWZ)&dates=20260611/20260612&details=United+Airlines+EWR+%E2%86%92+Paris+CDG%0AConf:+ORXMWZ%0AGarry+%26+Kathy+Berardi&location=Newark+Liberty+International+(EWR)" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jun 12 -->
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num"><span class="mo">Jun</span><span class="dt">12</span><span class="dw">Fri</span></div>
+        <div class="day-info"><h3>Arrive Paris · Check in</h3><p>CDG arrival · Courtyard Marriott Porte de Versailles</p></div>
+        <div class="day-badge-wrap"><span class="badge bp">Paris</span></div>
+      </div>
+      <div class="events">
+        <div class="ev"><div class="ev-time">Morning</div><div class="ev-dot f"></div><div class="ev-body"><strong>Land at Charles de Gaulle (CDG)</strong><p>All families arrive</p></div></div>
+        <div class="ev"><div class="ev-time">~9 AM</div><div class="ev-dot"></div><div class="ev-body"><strong>RER B: CDG → Paris city center</strong><p>~35 min · ~€17/person · Children under 4 ride free</p></div></div>
+        <div class="ev">
+          <div class="ev-time">Afternoon</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>Check in: Courtyard Marriott Paris Porte de Versailles</strong>
+            <p>Junior Suite #96303366 (Estes) · King #74275862 (Estes) · Twin #78864083 (Berardis)</p>
+            <div class="conf">Marriott: <a href="https://mail.google.com/mail/u/0/#inbox/19cda7d4e833e471" target="_blank">#78864083 ↗</a> · <a href="https://mail.google.com/mail/u/0/#inbox/19cd58a30f6f8752" target="_blank">#74275862 ↗</a></div>
+            <div class="note">Kourakins have a separate arrangement for the Paris night.</div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('paris-hotel')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%8F%A8+Paris:+Courtyard+Marriott+Porte+de+Versailles&dates=20260612/20260613&details=3+rooms%0AJunior+Suite+%2396303366+(Estes)%0AKing+%2374275862+(Estes)%0ATwin+%2378864083+(Berardis)&location=Courtyard+by+Marriott+Paris+Porte+de+Versailles,+Paris,+France" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jun 13 Travel -->
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num"><span class="mo">Jun</span><span class="dt">13</span><span class="dw">Sat</span></div>
+        <div class="day-info"><h3>Paris → Bordeaux → Carlux</h3><p>TGV south · Pick up Turo · Villa check-in</p></div>
+        <div class="day-badge-wrap"><span class="badge bt">Travel Day</span></div>
+      </div>
+      <div class="events">
+        <div class="ev"><div class="ev-time">Morning</div><div class="ev-dot f"></div><div class="ev-body"><strong>Check out: Courtyard Marriott · Head to TGV station</strong></div></div>
+        <div class="ev">
+          <div class="ev-time">TBD</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>SNCF TGV: Paris all stations → Bordeaux Saint-Jean (826JJW)</strong>
+            <p>7 passengers · ~2h05 · €975.00 total</p>
+            <div class="conf">Conf: <a href="https://mail.google.com/mail/u/0/#inbox/19cfd916ff17cbdf" target="_blank">826JJW SNCF ↗</a></div>
+            <div class="note">Retrieve tickets at sncf-connect.com → My Trips → Ref. 826JJW / Name: ESTES</div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('tgv-out')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%9A%84+TGV:+Paris+%E2%86%92+Bordeaux+(826JJW)&dates=20260613/20260614&details=SNCF+TGV+Paris+all+stations+%E2%86%92+Bordeaux+Saint-Jean%0ARef.+826JJW+/+Name:+ESTES%0A7+passengers+%7C+%E2%82%AC975.00&location=Paris,+France+%E2%86%92+Bordeaux+Saint-Jean" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="ev-time">1:00 PM</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>Pick up: Turo Peugeot 5008 at Bordeaux Saint-Jean</strong>
+            <p>2023 Peugeot 5008 · 1,050 km included · Owner: +33 7 52 66 60 24</p>
+            <div class="conf">Conf: <a href="https://mail.google.com/mail/u/0/#inbox/19cda9e9cc833f3f" target="_blank">Turo #54979234 ↗</a></div>
+            <div class="note">⚠ Michelle cannot pick up without Joshua present. Charged €364.38 to AMEX ••••5327 on Jun 6.</div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('turo-pickup')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%9A%97+Pick+up+Turo+Peugeot+5008+(Res.+%2354979234)&dates=20260613T110000Z/20260613T120000Z&details=JOSSELIN%27s+Peugeot+5008+2023%0ARes.+%2354979234+%7C+1%2C050+km+included%0AMichelle+approved+as+additional+driver&location=Bordeaux+Saint-Jean+station,+Bordeaux,+France" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="ev-time">~3:30 PM</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>Arrive &amp; check in: Manoir 1731, Carlux, Dordogne</strong>
+            <p>~2.5 hr drive from Bordeaux · 6 bedrooms · Entry codes arrive ~June 3</p>
+            <div class="conf">Booking: <a href="https://mail.google.com/mail/u/0/#inbox/19d0a89c5132ed22" target="_blank">Oliver's Travels / Marriott ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jun 13-20 Villa -->
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num"><span class="mo">Jun</span><span class="dt">13–20</span><span class="dw">Sat–Sat</span></div>
+        <div class="day-info"><h3>La Semaine en Dordogne</h3><p>Manoir 1731 · Wine country · Medieval villages</p></div>
+        <div class="day-badge-wrap"><span class="badge bd">Villa Week</span></div>
+      </div>
+      <div class="events">
+        <div class="ev">
+          <div class="ev-time"></div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>Manoir 1731 — Res. #M1771855227263</strong>
+            <p>6 bedrooms · All 8 travelers · Homes &amp; Villas by Marriott / Oliver's Travels</p>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('villa')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%8F%A1+Manoir+1731+%E2%80%94+Carlux,+Dordogne&dates=20260613/20260620&details=Manoir+1731,+Carlux,+Dordogne%0ARes.+%23M1771855227263%0A6+bedrooms+%7C+8+travelers%0AEntry+codes+arrive+~June+3&location=Manoir+1731,+Carlux,+Dordogne,+France" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="ev"><div class="ev-time"></div><div class="ev-dot"></div><div class="ev-body"><strong>Day trips</strong><p>Sarlat-la-Canéda (20 min) · Lascaux IV cave paintings · Château de Castelnaud · Beynac et Cazenac · Domme · Les Eyzies</p></div></div>
+        <div class="ev"><div class="ev-time"></div><div class="ev-dot"></div><div class="ev-body"><strong>Wine excursions</strong><p>Saint-Émilion (~1.5 hrs west) · Bergerac vineyards · Cahors Malbec country</p></div></div>
+      </div>
+    </div>
+
+    <!-- Jun 20 -->
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num" style="background:var(--rouge);"><span class="mo">Jun</span><span class="dt">20</span><span class="dw">Sat</span></div>
+        <div class="day-info"><h3>Departure from the villa</h3><p>Return Turo · TGV north · Hotels split</p></div>
+        <div class="day-badge-wrap"><span class="badge br">Departure</span></div>
+      </div>
+      <div class="events">
+        <div class="ev">
+          <div class="ev-time">By 11 AM</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>Check out Manoir 1731 + Return Turo at Bordeaux Saint-Jean</strong>
+            <p>Drive ~2.5 hrs from Carlux · Must return car by 11:00 AM sharp</p>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('turo-return')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%8F%81+Checkout+%26+Return+Turo+by+11AM&dates=20260620T070000Z/20260620T090000Z&details=Check+out+of+Manoir+1731%0AReturn+Turo+Peugeot+5008+at+Bordeaux+Saint-Jean+by+11:00+AM&location=Manoir+1731,+Carlux,+Dordogne,+France" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="ev-time">TBD</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>SNCF TGV: Bordeaux → Paris (return leg, 826JJW)</strong>
+            <div class="conf">Conf: <a href="https://mail.google.com/mail/u/0/#inbox/19cfd916ff17cbdf" target="_blank">826JJW SNCF ↗</a></div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('tgv-return')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%9A%84+TGV:+Bordeaux+%E2%86%92+Paris+(826JJW+Return)&dates=20260620/20260621&details=SNCF+TGV+return+leg+%7C+Ref.+826JJW&location=Bordeaux+Saint-Jean+%E2%86%92+Paris,+France" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+        <div class="ev">
+          <div class="ev-time">Evening</div><div class="ev-dot"></div>
+          <div class="ev-body">
+            <strong>Hotels for Jun 20 night</strong>
+            <p>Novotel Paris Porte de Versailles (Jun 20–21) · Hotels.com Bordeaux #72072026164793 (amount pending)</p>
+            <div class="conf"><a href="https://mail.google.com/mail/u/0/#inbox/19cda8ad3daa0347" target="_blank">Hotels.com email ↗</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jun 24 -->
+    <div class="day-card">
+      <div class="day-hdr">
+        <div class="day-num"><span class="mo">Jun</span><span class="dt">24</span><span class="dw">Wed</span></div>
+        <div class="day-info"><h3>Berardis fly home</h3><p>EWR → Atlanta (UA1991, NXB2X9)</p></div>
+        <div class="day-badge-wrap"><span class="badge br">Homebound</span></div>
+      </div>
+      <div class="events">
+        <div class="ev">
+          <div class="ev-time">5:12 PM</div><div class="ev-dot f"></div>
+          <div class="ev-body">
+            <strong>UA1991 EWR → Atlanta (ATL), arrives 7:46 PM</strong>
+            <p>Garry &amp; Kathy Berardi · Seats 29E / 29D</p>
+            <div class="conf">Conf: <a href="https://mail.google.com/mail/u/0/#inbox/19d8e144cf23f713" target="_blank">NXB2X9 ↗</a></div>
+            <div class="note">Berardis have ~4 days in the NY/NJ area between their CDG→EWR return and this flight.</div>
+            <div class="ev-actions">
+              <button class="cal-sm ics" onclick="dl('berardi-ewr-atl')">⬇ .ics</button>
+              <a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%E2%9C%88+Berardis:+EWR+%E2%86%92+ATL+(UA1991,+NXB2X9)&dates=20260624T211200Z/20260624T234600Z&details=United+Airlines+UA1991%0AConf:+NXB2X9%0AGarry+%26+Kathy+Berardi%0ASeats:+29E+/+29D&location=Newark+Liberty+International+(EWR)" target="_blank">+ Google Calendar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><!-- end itinerary -->
+
+  <!-- CONFIRMATIONS -->
+  <div class="section">
+    <div class="section-header"><span class="section-icon">📋</span><span class="section-title">All Confirmations</span></div>
+    <div class="grid">
+      <div class="bcard"><div class="bc-lbl">✈ Estes &amp; Kourakins — Int'l</div><div class="bc-ttl">United EWR ↔ CDG</div><dl><dt>Conf</dt><dd>JD2ETX</dd><dt>Pax</dt><dd>6 (Estes ×4 + Kourakins ×2)</dd><dt>Method</dt><dd>198K miles (Estes only)</dd><dt>Booked</dt><dd>Feb 27, 2026</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19c9c841acd106c8" target="_blank">View email ↗</a><div class="ev-actions"><button class="cal-sm ics" onclick="dl('ewr-cdg-estes')">⬇ .ics</button><a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%E2%9C%88+EWR+%E2%86%92+CDG+(JD2ETX)&dates=20260611/20260612&location=Newark+Liberty+International" target="_blank">+ Google</a></div></div>
+      <div class="bcard"><div class="bc-lbl">✈ Berardis — Int'l</div><div class="bc-ttl">United EWR ↔ CDG</div><dl><dt>Conf</dt><dd>ORXMWZ</dd><dt>Pax</dt><dd>Garry &amp; Kathy Berardi</dd><dt>Booked</dt><dd>Mar 10, 2026</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19cd580cdabf621f" target="_blank">View email ↗</a><div class="ev-actions"><button class="cal-sm ics" onclick="dl('ewr-cdg-berardi')">⬇ .ics</button><a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%E2%9C%88+EWR+%E2%86%92+CDG+(ORXMWZ)&dates=20260611/20260612&location=Newark+Liberty+International" target="_blank">+ Google</a></div></div>
+      <div class="bcard"><div class="bc-lbl">✈ Berardis — Domestic Connector</div><div class="bc-ttl">United ATL ↔ EWR</div><dl><dt>Conf</dt><dd>NXB2X9</dd><dt>Out</dt><dd>Jun 9: UA1152 ATL→EWR 7:37 PM</dd><dt>Return</dt><dd>Jun 24: UA1991 EWR→ATL 5:12 PM</dd><dt>Total</dt><dd>$553.60 ($293.60 cash + 26K miles)</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19d8e15286282c56" target="_blank">View receipt ↗</a><div class="ev-actions"><button class="cal-sm ics" onclick="dl('berardi-atl-ewr')">⬇ Outbound .ics</button><button class="cal-sm ics" onclick="dl('berardi-ewr-atl')">⬇ Return .ics</button></div></div>
+      <div class="bcard"><div class="bc-lbl">🚄 Train — Round-Trip</div><div class="bc-ttl">SNCF TGV Paris ↔ Bordeaux</div><dl><dt>Ref</dt><dd>826JJW</dd><dt>Out</dt><dd>Sat Jun 13, Paris → Bordeaux</dd><dt>Return</dt><dd>Sat Jun 20, Bordeaux → Paris</dd><dt>Total</dt><dd>€975.00 ($1,120.18 USD)</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19cfd916ff17cbdf" target="_blank">View email ↗</a><div class="ev-actions"><button class="cal-sm ics" onclick="dl('tgv-out')">⬇ Outbound .ics</button><button class="cal-sm ics" onclick="dl('tgv-return')">⬇ Return .ics</button></div></div>
+      <div class="bcard"><div class="bc-lbl">🏡 Villa — Jun 13–20</div><div class="bc-ttl">Manoir 1731, Carlux</div><dl><dt>Res</dt><dd>M1771855227263</dd><dt>Provider</dt><dd>Homes &amp; Villas by Marriott</dd><dt>Total</dt><dd>£4,719.08 cash + 201,690 pts</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19d0a89c5132ed22" target="_blank">View email ↗</a><div class="ev-actions"><button class="cal-sm ics" onclick="dl('villa')">⬇ .ics</button><a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%8F%A1+Manoir+1731,+Carlux&dates=20260613/20260620&location=Manoir+1731,+Carlux,+Dordogne,+France" target="_blank">+ Google</a></div></div>
+      <div class="bcard"><div class="bc-lbl">🏨 Hotel — Paris Jun 12–13</div><div class="bc-ttl">Courtyard Marriott Porte de Versailles</div><dl><dt>Room 1</dt><dd>#96303366 Junior Suite (Estes)</dd><dt>Room 2</dt><dd>#74275862 King (Estes)</dd><dt>Room 3</dt><dd>#78864083 Twin (Berardis)</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19cda7d4e833e471" target="_blank">View email ↗</a><div class="ev-actions"><button class="cal-sm ics" onclick="dl('paris-hotel')">⬇ .ics</button><a class="cal-sm gcal" href="https://calendar.google.com/calendar/r/eventedit?text=%F0%9F%8F%A8+Courtyard+Marriott+Paris&dates=20260612/20260613&location=Courtyard+Marriott+Porte+de+Versailles,+Paris" target="_blank">+ Google</a></div></div>
+      <div class="bcard"><div class="bc-lbl">🚗 Car Rental — Jun 13–20</div><div class="bc-ttl">Turo Peugeot 5008</div><dl><dt>Res</dt><dd>#54979234</dd><dt>Pick-up</dt><dd>Jun 13 at 1:00 PM, Bordeaux Saint-Jean</dd><dt>Drop-off</dt><dd>Jun 20 at 11:00 AM, Bordeaux Saint-Jean</dd><dt>Total</dt><dd>€364.38 · charged Jun 6, AMEX ••••5327</dd><dt>Drivers</dt><dd>Joshua (primary) · Michelle (approved)</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19cda9e9cc833f3f" target="_blank">View email ↗</a><div class="ev-actions"><button class="cal-sm ics" onclick="dl('turo-pickup')">⬇ Pick-up .ics</button><button class="cal-sm ics" onclick="dl('turo-return')">⬇ Drop-off .ics</button></div></div>
+      <div class="bcard warn"><div class="bc-lbl danger">⚠ Hotel — Bordeaux Jun 20</div><div class="bc-ttl">Hotels.com — Amount Pending</div><dl><dt>Itinerary</dt><dd>#72072026164793</dd><dt>Check-in</dt><dd>Saturday Jun 20, 2026</dd><dt>Amount</dt><dd class="pending">Unknown — email image-only</dd></dl><a class="cl" href="https://mail.google.com/mail/u/0/#inbox/19cda8ad3daa0347" target="_blank">View email ↗</a></div>
+    </div>
+  </div>
+
+  <!-- COSTS -->
+  <div class="section">
+    <div class="section-header"><span class="section-icon">💸</span><span class="section-title">What Each Party Owes Joshua</span><span class="section-sub">Updated with NXB2X9</span></div>
+    <table class="ctable">
+      <thead><tr><th>Party</th><th>People</th><th>Prior Total</th><th>NXB2X9 Add</th><th>Updated Total</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Kourakins</strong><br><small>Austin + Mary</small></td><td>2</td><td>$2,224.41</td><td>—</td><td><strong>$2,224.41</strong></td></tr>
+        <tr><td><strong>Berardis</strong><br><small>Garry + Kathy</small></td><td>2</td><td>$5,529.91</td><td>+$553.60</td><td><strong>$6,083.51</strong></td></tr>
+        <tr class="tr"><td><strong>Total owed to Joshua</strong></td><td></td><td>$7,754.32</td><td>+$553.60</td><td><strong>$8,307.92</strong></td></tr>
+      </tbody>
+    </table>
+    <p style="font-size:11.5px;color:var(--muted);margin-top:10px;">Hotels.com Bordeaux amount not yet included. Add to Berardi total once confirmed.</p>
+  </div>
+
+  <!-- OPEN ITEMS -->
+  <div class="section">
+    <div class="section-header"><span class="section-icon">✅</span><span class="section-title">Open Items</span></div>
+    <ul class="alist">
+      <li><span class="tag urg">Urgent</span><div>Pull Hotels.com Bordeaux Itinerary <strong>#72072026164793</strong> amount from your account. Add to Berardi total and update the budget sheet.</div></li>
+      <li><span class="tag urg">Email</span><div><strong>gmberardi@comcast.com bounced.</strong> Correct address is <strong>gmberardi@comcast.net</strong>.</div></li>
+      <li><span class="tag def">Tickets</span><div>Download SNCF tickets at <a href="https://www.sncf-connect.com" target="_blank" style="color:var(--bleu);">sncf-connect.com</a> → My Trips → Ref. <strong>826JJW</strong> / Name: ESTES. Save to Apple Wallet before June 13.</div></li>
+      <li><span class="tag def">Entry Codes</span><div>Oliver's Travels emails Manoir 1731 entry codes around June 3. Watch for it and share with the group.</div></li>
+      <li><span class="tag def">Turo</span><div>Turo auto-charges €364.38 to AMEX ••••5327 on <strong>June 6</strong>. Confirm the card is active.</div></li>
+      <li><span class="tag def">Budget</span><div>Update the <a href="https://docs.google.com/spreadsheets/d/1CaoTAwom_izVjtIZremVrmUB5anQQwbF/edit" target="_blank" style="color:var(--bleu);">budget spreadsheet</a>: add NXB2X9 Berardi domestic flight ($553.60) and adjust Berardi owed to $6,083.51+.</div></li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <span class="hearts">♥&nbsp;&nbsp;♥</span>
+    <p><strong>Joshua &amp; Michelle — 10 Year Anniversary</strong><br>
+    France · June 2026 · Estes · Kourakin · Berardi<br>
+    All confirmation links open in Joshua's Gmail · Last updated April 26, 2026</p>
+  </div>
+
+</div>
+
+<div class="tricolor" style="margin-top:40px"><span class="bl"></span><span class="wh"></span><span class="rg"></span></div>
+
+<script>
+// Sparkle positions (% from title top-left)
+const sparkleConfigs = [
+  {x:-28,y:-18,size:18,delay:0,color:'#f5e5a0'},
+  {x:102,y:-22,size:14,delay:0.6,color:'#e2c97a'},
+  {x:-18,y:55,size:10,delay:1.1,color:'#c8a84b'},
+  {x:105,y:48,size:16,delay:0.3,color:'#f0d98a'},
+  {x:40,y:-30,size:12,delay:0.9,color:'#e8d070'},
+  {x:68,y:-25,size:8,delay:1.5,color:'#f5e5a0'},
+  {x:-10,y:85,size:11,delay:0.4,color:'#c8a84b'},
+  {x:95,y:80,size:9,delay:1.8,color:'#e2c97a'},
+  {x:22,y:-20,size:7,delay:2.1,color:'#f0d98a'},
+];
+
+function starSVG(size, color, delay) {
+  return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" style="animation-delay:${delay}s" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="12,2 14.5,9 22,9 16,14 18.5,21 12,17 5.5,21 8,14 2,9 9.5,9" fill="${color}" opacity="0.9"/>
+  </svg>`;
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const wrap = document.getElementById('titleWrap');
+  sparkleConfigs.forEach(cfg => {
+    const s = document.createElement('span');
+    s.className = 'spark';
+    s.style.left = cfg.x + '%';
+    s.style.top = cfg.y + '%';
+    s.innerHTML = starSVG(cfg.size, cfg.color, cfg.delay);
+    wrap.appendChild(s);
+  });
+});
+
+// ICS DATA
+const EVENTS = {
+  'berardi-atl-ewr': {s:'Joshua & Michelle Anniversary Trip: ✈ Berardis ATL→EWR (UA1152, NXB2X9)',ds:'20260609T233700Z',de:'20260610T020400Z',desc:'United Airlines UA1152\\nConf: NXB2X9\\nGarry & Kathy Berardi | Seats: 31A / 31B',loc:'Atlanta Hartsfield-Jackson International Airport (ATL)'},
+  'ewr-cdg-estes': {s:'Anniversary Trip: ✈ EWR→Paris CDG — Estes & Kourakins (JD2ETX)',ds:'20260611',de:'20260612',ad:true,desc:'United Airlines EWR → Paris CDG\\nConf: JD2ETX\\nJoshua\\, Michelle + kids\\, Austin & Mary Kourakin\\n6 passengers',loc:'Newark Liberty International Airport (EWR)'},
+  'ewr-cdg-berardi': {s:'Anniversary Trip: ✈ EWR→Paris CDG — Berardis (ORXMWZ)',ds:'20260611',de:'20260612',ad:true,desc:'United Airlines EWR → Paris CDG\\nConf: ORXMWZ\\nGarry & Kathy Berardi',loc:'Newark Liberty International Airport (EWR)'},
+  'paris-hotel': {s:'Anniversary Trip: 🏨 Courtyard Marriott Paris Porte de Versailles',ds:'20260612',de:'20260613',ad:true,desc:'3 rooms confirmed\\nJunior Suite #96303366 (Estes)\\nKing #74275862 (Estes)\\nTwin #78864083 (Berardis)\\nKourakins have separate arrangement.',loc:'Courtyard by Marriott Paris Porte de Versailles, Paris, France'},
+  'tgv-out': {s:'Anniversary Trip: 🚄 TGV Paris→Bordeaux Saint-Jean (Ref. 826JJW)',ds:'20260613',de:'20260614',ad:true,desc:'SNCF TGV Paris all stations → Bordeaux Saint-Jean\\nRef. 826JJW / Name: ESTES\\n7 passengers | €975.00 total\\nTickets: sncf-connect.com → My Trips',loc:'Paris all stations → Bordeaux Saint-Jean, France'},
+  'turo-pickup': {s:'Anniversary Trip: 🚗 Pick up Turo Peugeot 5008 (#54979234)',ds:'20260613T110000Z',de:'20260613T120000Z',desc:"JOSSELIN's Peugeot 5008 2023\\nRes. #54979234 | 1\\,050 km included\\nOwner: +33 7 52 66 60 24\\nMichelle approved as additional driver",loc:'Bordeaux Saint-Jean station, Bordeaux, France'},
+  'villa': {s:'✨ Anniversary Trip: 🏡 Manoir 1731 — Carlux, Dordogne',ds:'20260613',de:'20260620',ad:true,desc:"Manoir 1731\\, Carlux\\, Dordogne\\nRes. #M1771855227263\\nHomes & Villas by Marriott / Oliver's Travels\\n6 bedrooms | All 8 travelers\\n\\nEntry codes arrive ~June 3 from Oliver's Travels — watch your email!\\n\\nNearby: Sarlat (20 min) | Lascaux IV | Château de Castelnaud | Saint-Émilion",loc:'Manoir 1731, Carlux, Dordogne, France'},
+  'turo-return': {s:'Anniversary Trip: 🚗 Return Turo by 11:00 AM — Bordeaux Saint-Jean',ds:'20260620T070000Z',de:'20260620T090000Z',desc:'Return Turo Peugeot 5008 at Bordeaux Saint-Jean by 11:00 AM\\nRes. #54979234\\nDrive ~2.5 hrs from Carlux — allow extra time!',loc:'Bordeaux Saint-Jean station, Bordeaux, France'},
+  'tgv-return': {s:'Anniversary Trip: 🚄 TGV Bordeaux→Paris (826JJW Return)',ds:'20260620',de:'20260621',ad:true,desc:'SNCF TGV Bordeaux Saint-Jean → Paris (return leg)\\nRef. 826JJW / Name: ESTES',loc:'Bordeaux Saint-Jean → Paris, France'},
+  'berardi-ewr-atl': {s:'Anniversary Trip: ✈ Berardis EWR→ATL (UA1991, NXB2X9)',ds:'20260624T211200Z',de:'20260624T234600Z',desc:'United Airlines UA1991\\nConf: NXB2X9\\nGarry & Kathy Berardi | Seats: 29E / 29D',loc:'Newark Liberty International Airport (EWR)'}
+};
+
+function buildICS(keys){
+  const now=new Date().toISOString().replace(/[-:.]/g,'').slice(0,15)+'Z';
+  const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Joshua & Michelle Anniversary Trip France 2026//EN','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Joshua & Michelle — Anniversary Trip France 2026'];
+  for(const k of keys){
+    const e=EVENTS[k];if(!e)continue;
+    lines.push('BEGIN:VEVENT');
+    lines.push('UID:anniversary-trip-'+k+'-2026@estes');
+    lines.push('DTSTAMP:'+now);
+    if(e.ad){lines.push('DTSTART;VALUE=DATE:'+e.ds);lines.push('DTEND;VALUE=DATE:'+e.de);}
+    else{lines.push('DTSTART:'+e.ds);lines.push('DTEND:'+e.de);}
+    lines.push('SUMMARY:'+e.s);
+    lines.push('DESCRIPTION:'+e.desc);
+    lines.push('LOCATION:'+e.loc);
+    lines.push('END:VEVENT');
+  }
+  lines.push('END:VCALENDAR');
+  return lines.join('\r\n');
+}
+function trigger(content,filename){
+  const blob=new Blob([content],{type:'text/calendar;charset=utf-8'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download=filename;
+  document.body.appendChild(a);a.click();
+  document.body.removeChild(a);URL.revokeObjectURL(url);
+}
+function downloadAllICS(){trigger(buildICS(Object.keys(EVENTS)),'Joshua_Michelle_Anniversary_France_2026.ics');}
+function dl(k){trigger(buildICS([k]),'Anniversary_Trip_'+k.replace(/-/g,'_')+'.ics');}
+</script>
+</body>
+</html>
